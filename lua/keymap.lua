@@ -51,8 +51,16 @@ function _G.set_terminal_keymaps()
 	vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
 	vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
 end
-
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
+-- jk to exit insert mode
 vim.keymap.set("i", "jk", "<Esc>")
+
+-- Shift p to special paste
+vim.keymap.set("n", "<leader>p", '"_dP')
+
+-- Center when horizontal navigation
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzv")
+vim.keymap.set("n", "N", "Nzzv")
