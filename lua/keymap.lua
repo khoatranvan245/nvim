@@ -56,11 +56,24 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 -- jk to exit insert mode
 vim.keymap.set("i", "jk", "<Esc>")
 
--- Shift p to special paste
-vim.keymap.set("n", "<leader>p", '"_dP')
+-- Special paste and delete
+vim.keymap.set("n", "<leader>p", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
+vim.keymap.set("n", "<leader>d", '"_d')
 
 -- Center when horizontal navigation
+vim.keymap.set("n", "n", "nzzv")
+vim.keymap.set("n", "n", "nzzv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzv")
 vim.keymap.set("n", "N", "Nzzv")
+
+-- Move text with J and K
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+--Copy to OS clipboard
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
