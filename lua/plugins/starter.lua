@@ -18,7 +18,7 @@ return {
     -- stylua: ignore
     dashboard.section.buttons.val = {
       dashboard.button("n", " " .. " New file",        [[<cmd> ene <BAR> startinsert <cr>]]),
-      dashboard.button("c", " " .. " Config",          "<cmd> e ~/.config/nvim <cr>"),
+      dashboard.button("c", " " .. " Config",          "<cmd> ex ~/.config/nvim <cr>"),
       dashboard.button("s", " " .. " Restore Session", [[<cmd> lua require("persistence").select() <cr>]]),
       dashboard.button("q", " " .. " Quit",            "<cmd> qa <cr>"),
     }
